@@ -37,7 +37,7 @@ const ProcessPayment = (req, res) => {
       .then(function(response) {
         const { response: data } = response;
         res.status(response.status).json({
-          _k: mercadoPagoAccessToken,
+          _k: process.env.MERCADO_PAGO_SAMPLE_ACCESS_TOKEN,
           _p: { 
             status: data.status,
             transaction_id: data.id,
