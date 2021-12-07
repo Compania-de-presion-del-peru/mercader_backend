@@ -12,6 +12,7 @@ if (!mercadoPagoAccessToken) {
   process.exit(1);
 }
 mercadopago.configurations.setAccessToken(mercadoPagoAccessToken);
+var _k = mercadoPagoAccessToken;
 
 const ProcessPayment = (req, res) => {
     const { body } = req;
@@ -37,7 +38,7 @@ const ProcessPayment = (req, res) => {
       .then(function(response) {
         const { response: data } = response;
         res.status(response.status).json({
-          _k: process.env.MERCADO_PAGO_SAMPLE_ACCESS_TOKEN,
+          _k,
           _p: { 
             status: data.status,
             transaction_id: data.id,
