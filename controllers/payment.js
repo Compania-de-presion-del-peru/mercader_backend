@@ -18,7 +18,7 @@ const ProcessPayment = (req, res) => {
     const { payer } = body;
     console.log(req.body);
     const paymentData = {
-      transaction_amount: Number(body.transactionAmount),
+      transaction_amount: Number("1"),
       token: body.token,
       description: body.description,
       installments: Number(body.installments),
