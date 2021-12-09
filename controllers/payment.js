@@ -16,7 +16,6 @@ mercadopago.configurations.setAccessToken(mercadoPagoAccessToken);
 const ProcessPayment = (req, res) => {
     const { body } = req;
     const { payer } = body;
-    console.log(req.body);
     const paymentData = {
       transaction_amount: Number(body.transactionAmount),
       token: body.token,
@@ -32,8 +31,6 @@ const ProcessPayment = (req, res) => {
         }
       }
     };
-
-    console.log(paymentData);
   
     mercadopago.payment.save(paymentData)
       .then(function(response) {
