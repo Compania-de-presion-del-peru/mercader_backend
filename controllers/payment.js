@@ -27,8 +27,8 @@ const ProcessPayment = (req, res) => {
       payer: {
         email: payer.email,
         identification: {
-          type: payer.identification.docType,
-          number: payer.identification.docNumber
+          type: payer.identification.type,
+          number: payer.identification.number
         }
       }
     };
