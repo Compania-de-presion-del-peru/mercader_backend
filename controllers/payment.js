@@ -32,6 +32,8 @@ const ProcessPayment = (req, res) => {
         }
       }
     };
+
+    console.log(paymentData);
   
     mercadopago.payment.save(paymentData)
       .then(function(response) {
